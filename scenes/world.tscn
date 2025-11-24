@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfjdly44oa00g"]
+[gd_scene load_steps=4 format=3 uid="uid://dfjdly44oa00g"]
 
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://5twu224a5ewd" path="res://scenes/slime.tscn" id="3_4wyf3"]
 
 [node name="world" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(4, -1)
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
+y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -25,3 +29,6 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
+
+[node name="slime" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-86, -15)
