@@ -26,7 +26,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_273gb")
 }],
 "loop": true,
-"name": &"no_apples",
+"name": &"no apples",
 "speed": 0.0
 }]
 
@@ -40,7 +40,7 @@ script = ExtResource("1_66v30")
 position = Vector2(2.5, 1)
 scale = Vector2(1.125, 1.05)
 sprite_frames = SubResource("SpriteFrames_ddunx")
-animation = &"apples"
+animation = &"no apples"
 
 [node name="pickable_area" type="Area2D" parent="."]
 position = Vector2(2.5, 1)
