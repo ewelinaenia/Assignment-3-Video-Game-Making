@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 #TODO invincibility frames...?
 
-var knockback_force = 100
+var knockback = Vector2.ZERO
+var knockback_timer = 0.0
 var health = 100
 var speed = 100.0
 var player_state
@@ -13,16 +14,23 @@ var death_animation_played = false
 func _physics_process(delta: float) -> void:
 	if player_state != "dead":
 		var direction = Input.get_vector("left", "right", "up", "down")
-		
-		if direction.x == 0 and direction.y == 0:
-			player_state = "idle"
-		elif direction.x != 0 or direction.y != 0:
-			player_state = "walking"
+		if knockback_timer > 0.0:
+			velocity = knockback
+			knockback_timer -= delta
+			if knockback_timer <= 0.0:
+				knockback = Vector2.ZERO
+			$AnimatedSprite2D.play("HURT")
+		else:
 			
-		velocity = direction * speed
+			if direction.x == 0 and direction.y == 0:
+				player_state = "idle"
+			elif direction.x != 0 or direction.y != 0:
+				player_state = "walking"
+			
+			velocity = direction * speed
+			play_animation(direction)
 		move_and_slide()
-	
-		play_animation(direction)
+		
 	elif !death_animation_played:
 		death_animation_played = true
 		play_animation(0)
@@ -54,8 +62,13 @@ func play_animation(direction):
 
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("enemy"):
-		health -= 50
+		health -= 20
+		var knockback_direction = (position - body.position).normalized()
+		apply_knockback(knockback_direction, 200, 0.15)
 	if health <= 0:
 		player_state = "dead"
 	
+func apply_knockback(direction: Vector2, force: float, duration: float) -> void:
+	knockback = direction * force
+	knockback_timer = duration
 		
