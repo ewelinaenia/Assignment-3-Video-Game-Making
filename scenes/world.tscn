@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfjdly44oa00g"]
+[gd_scene load_steps=7 format=3 uid="uid://dfjdly44oa00g"]
 
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="Resource" uid="uid://dfwtyc2yjyciq" path="res://inventory/player_bag.tres" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://5twu224a5ewd" path="res://scenes/slime.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://d2sm01mx048bo" path="res://scenes/apple_tree.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://cqhbvslqxhsse" path="res://scenes/fire.tscn" id="5_71j4m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71j4m"]
+bg_color = Color(0.812696, 0.525556, 0.254121, 1)
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -10,6 +16,7 @@ position = Vector2(4, -1)
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
 y_sort_enabled = true
+bag = ExtResource("2_71j4m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -32,3 +39,26 @@ scale = Vector2(2, 2)
 
 [node name="slime" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(-86, -15)
+
+[node name="apple_tree" parent="." instance=ExtResource("4_k0juu")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TemperatureBar" type="ProgressBar" parent="CanvasLayer2"]
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 18.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_71j4m")
+value = 100.0
+show_percentage = false
+
+[node name="TemperatureLabel" type="Label" parent="CanvasLayer2"]
+offset_left = 118.0
+offset_top = -1.0
+offset_right = 220.0
+offset_bottom = 22.0
+text = "Temperature"
+
+[node name="Fire" parent="." instance=ExtResource("5_71j4m")]
+position = Vector2(-169, -288)
+
