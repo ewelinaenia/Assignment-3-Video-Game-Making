@@ -1,0 +1,55 @@
+[gd_scene load_steps=14 format=3 uid="uid://cqhbvslqxhsse"]
+
+[ext_resource type="Script" uid="uid://dyclookc403ch" path="res://scenes/fire.gd" id="1_52nqi"]
+[ext_resource type="Shader" uid="uid://hfojoo7bm2o0" path="res://shaders/fire_shader.tres" id="2_txieb"]
+[ext_resource type="Texture2D" uid="uid://dr1k0e024ifs" path="res://textures/T_VFX_Noise_465.png" id="3_4l61p"]
+[ext_resource type="Texture2D" uid="uid://cq7ca1iqav0yf" path="res://textures/T_Gradient_circle22.jpg" id="4_10wrr"]
+[ext_resource type="Texture2D" uid="uid://dtoep1ph0w3ax" path="res://textures/T_1_pixel (1).jpg" id="5_theev"]
+
+[sub_resource type="Gradient" id="Gradient_3l77w"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ajlmw"]
+gradient = SubResource("Gradient_3l77w")
+fill_to = Vector2(0.00537634, 1)
+
+[sub_resource type="Gradient" id="Gradient_ia3m4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tuqhi"]
+gradient = SubResource("Gradient_ia3m4")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_txieb"]
+offsets = PackedFloat32Array(0.0125, 0.5175, 0.5725, 0.995, 1)
+colors = PackedColorArray(0.924, 0, 0.09, 0, 0.924, 0, 0.09, 1, 1, 0.5, 0.1, 1, 5, 0.9, 0.5, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4l61p"]
+gradient = SubResource("Gradient_txieb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwixg"]
+shader = ExtResource("2_txieb")
+shader_parameter/Scale = Vector2(1, 1)
+shader_parameter/Speed = Vector2(0, 1)
+shader_parameter/Texture_1 = ExtResource("3_4l61p")
+shader_parameter/Texture_2 = SubResource("GradientTexture2D_ajlmw")
+shader_parameter/Texture_3 = ExtResource("4_10wrr")
+shader_parameter/Texture_4 = SubResource("GradientTexture2D_tuqhi")
+shader_parameter/Texture_5 = SubResource("GradientTexture1D_4l61p")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_10wrr"]
+radius = 19.9249
+
+[node name="Fire" type="Area2D"]
+script = ExtResource("1_52nqi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jwixg")
+position = Vector2(263.625, 208.125)
+scale = Vector2(52.75, 45.75)
+texture = ExtResource("5_theev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(261, 212)
+shape = SubResource("CircleShape2D_10wrr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
