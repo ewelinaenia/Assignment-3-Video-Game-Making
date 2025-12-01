@@ -42,7 +42,7 @@ item = ExtResource("2_y0035")
 position = Vector2(2.5, 1)
 scale = Vector2(1.125, 1.05)
 sprite_frames = SubResource("SpriteFrames_ddunx")
-animation = &"no apples"
+animation = &"apples"
 
 [node name="pickable_area" type="Area2D" parent="."]
 position = Vector2(2.5, 1)

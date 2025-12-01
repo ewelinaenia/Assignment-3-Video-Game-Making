@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0kys2aevrxo1"]
+
+[ext_resource type="Script" uid="uid://dht2akx7sh31u" path="res://scripts/lu_card.gd" id="1_hu6q8"]
+[ext_resource type="Resource" uid="uid://c60w7k2qptrhc" path="res://inventory/items/lu_card.tres" id="2_fd5qp"]
+[ext_resource type="Texture2D" uid="uid://bh1ikektes6b8" path="res://assets/collectables/LU-card.png" id="3_h60h4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88qkw"]
+size = Vector2(24, 19)
+
+[node name="lu_card" type="StaticBody2D"]
+script = ExtResource("1_hu6q8")
+item = ExtResource("2_fd5qp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_h60h4")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_88qkw")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

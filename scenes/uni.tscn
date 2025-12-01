@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm6h55kmro3a"]
+[gd_scene load_steps=7 format=3 uid="uid://bm6h55kmro3a"]
 
 [ext_resource type="Texture2D" uid="uid://4kw6j4yv4bh2" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_1rro3"]
 [ext_resource type="Texture2D" uid="uid://c133vkrv6lho0" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="2_aascb"]
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="3_aascb"]
-[ext_resource type="Resource" uid="uid://dfwtyc2yjyciq" path="res://inventory/player_bag.tres" id="4_7a2g1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a2g1"]
 texture = ExtResource("1_1rro3")
@@ -1606,7 +1605,6 @@ layer_5/tile_data = PackedInt32Array(983061, 589825, 35, 1048597, 589825, 36, 13
 
 [node name="player" parent="." instance=ExtResource("3_aascb")]
 position = Vector2(431, 58)
-bag = ExtResource("4_7a2g1")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)
@@ -1656,3 +1654,6 @@ region_rect = Rect2(13, 161, 38, 37)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(261, 765)
+
+[node name="player2" parent="." instance=ExtResource("3_aascb")]
+position = Vector2(134, 648)
