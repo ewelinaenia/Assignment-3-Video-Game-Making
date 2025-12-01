@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://baur7k8lkchl6"]
 
 [ext_resource type="Script" uid="uid://cpidq50a42d5y" path="res://inventory/inventory_item.gd" id="1_cstgf"]
-[ext_resource type="Texture2D" uid="uid://bbtrv7bvdjm03" path="res://asstes/survivalgame-enemy-slime.png" id="2_cd3v3"]
+[ext_resource type="Texture2D" uid="uid://bl36wuy2hljk8" path="res://assets/collectables/apple-icon.png" id="2_cd3v3"]
 
 [resource]
 script = ExtResource("1_cstgf")
