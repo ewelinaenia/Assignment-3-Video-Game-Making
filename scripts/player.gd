@@ -22,7 +22,13 @@ var temp_gain_per_sec: float = 20.0
 
 var near_fire: bool = false
 @onready var temperature_bar: ProgressBar = $"../CanvasLayer2/TemperatureBar"
+var bow:Node2D
 
+func _ready() -> void:
+	bow = $Bow
+	
+func is_player()->bool:
+	return true
 
 func _physics_process(delta: float) -> void:
 	if player_state != "dead":
@@ -47,11 +53,15 @@ func _physics_process(delta: float) -> void:
 	elif !death_animation_played:
 		death_animation_played = true
 		play_animation(0)
-
 #temp
 func _process(delta: float) -> void:
 	_update_temperature(delta)
 	_update_ui()
+	bow.look_at(get_global_mouse_position())
+	if Input.is_action_just_pressed("use_item"):
+		bow.charging()
+	if Input.is_action_just_released("use_item"):
+		bow.shoot()
 	
 func play_animation(direction):
 	if player_state == "idle":

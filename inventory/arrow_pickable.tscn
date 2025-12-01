@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dirsoltgqyrnb"]
+
+[ext_resource type="Texture2D" uid="uid://cmsrc1gmiuofr" path="res://textures/arrow.png" id="1_108bu"]
+[ext_resource type="Script" uid="uid://bn32onx8hc6l0" path="res://scripts/arrow_pickable.gd" id="1_lo733"]
+[ext_resource type="Texture2D" uid="uid://qett1w0m5bfo" path="res://textures/bubble.png" id="2_lo733"]
+[ext_resource type="AudioStream" uid="uid://dy5y3a35tn5dh" path="res://audios/pickup.wav" id="4_k32u7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_108bu"]
+radius = 5.09902
+
+[node name="ArrowPickable" type="Node2D"]
+script = ExtResource("1_lo733")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_108bu")
+
+[node name="Bubble" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_lo733")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_108bu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k32u7")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
