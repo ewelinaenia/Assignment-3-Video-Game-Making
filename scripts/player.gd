@@ -8,6 +8,9 @@ var speed = 100.0
 var player_state
 var death_animation_played = false
 
+var knockback = Vector2.ZERO
+var knockback_timer = 0.0
+
 @export var bag: Inventory
 
 #temp
@@ -23,17 +26,24 @@ var near_fire: bool = false
 
 func _physics_process(delta: float) -> void:
 	if player_state != "dead":
-		var direction = Input.get_vector("left", "right", "up", "down")
-		
-		if direction.x == 0 and direction.y == 0:
-			player_state = "idle"
-		elif direction.x != 0 or direction.y != 0:
-			player_state = "walking"
+		if knockback_timer > 0.0:
+			velocity = knockback
+			knockback_timer -= delta
+			if knockback_timer <= 0.0:
+				knockback = Vector2.ZERO
+		else:
+			var direction = Input.get_vector("left", "right", "up", "down")
 			
-		velocity = direction * speed
+			if direction.x == 0 and direction.y == 0:
+				player_state = "idle"
+			elif direction.x != 0 or direction.y != 0:
+				player_state = "walking"
+			
+			play_animation(direction)
+			velocity = direction * speed
 		move_and_slide()
 	
-		play_animation(direction)
+		
 	elif !death_animation_played:
 		death_animation_played = true
 		play_animation(0)
@@ -72,7 +82,10 @@ func collect(item):
 
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("enemy"):
-		health -= 50
+		health -= 20
+		print(health)
+		var knockback_direction = (position - body.position).normalized()
+		apply_knockback(knockback_direction, 200, 0.15)
 	if health <= 0:
 		player_state = "dead"
 
@@ -88,3 +101,6 @@ func _update_ui() -> void:
 	if temperature_bar:
 		temperature_bar.value = temperature			
 		
+func apply_knockback(direction, force, knockback_duration)->void:
+	knockback = direction * force
+	knockback_timer = knockback_duration
