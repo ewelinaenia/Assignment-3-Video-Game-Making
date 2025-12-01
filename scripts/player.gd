@@ -67,6 +67,8 @@ func play_animation(direction):
 	elif player_state == "dead":
 		$AnimatedSprite2D.play("death")
 			
+func collect(item):
+	bag.insert(item)
 
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("enemy"):
