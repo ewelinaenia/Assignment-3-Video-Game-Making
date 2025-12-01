@@ -1,6 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://bht2fnergww5r"]
+[gd_scene load_steps=31 format=3 uid="uid://bht2fnergww5r"]
 
 [ext_resource type="Script" uid="uid://b0jj1t1k0nngh" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Resource" uid="uid://dfwtyc2yjyciq" path="res://inventory/player_bag.tres" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://2aha6eh61fcj" path="res://assets/Character-Base.png" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
@@ -230,9 +231,10 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 5.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 script = ExtResource("1_g2els")
+bag = ExtResource("2_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pf23h")
