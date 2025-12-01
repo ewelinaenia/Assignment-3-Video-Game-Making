@@ -15,11 +15,11 @@ var player
 func _ready():
 	dead = false
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not dead:
 		$detection/CollisionShape2D.disabled = false
 		if player_in_area:
-			position += (player.position - position).normalized() * speed * delta
+			position += (player.position - position).normalized() * speed 
 			$AnimatedSprite2D.play("move")
 		else:
 			$AnimatedSprite2D.play("idle")
