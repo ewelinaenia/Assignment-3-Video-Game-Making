@@ -1,22 +1,13 @@
-<<<<<<< HEAD
-[gd_scene load_steps=8 format=3 uid="uid://dfjdly44oa00g"]
-=======
-[gd_scene load_steps=9 format=3 uid="uid://dfjdly44oa00g"]
->>>>>>> 55b210f32ea3b5853bf6fa58a5df4745898ec810
+[gd_scene load_steps=10 format=3 uid="uid://dfjdly44oa00g"]
 
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="3_4wyf3"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://d2sm01mx048bo" path="res://scenes/apple_tree.tscn" id="4_k0juu"]
-[ext_resource type="PackedScene" uid="uid://cqhbvslqxhsse" path="res://scenes/fire.tscn" id="5_71j4m"]
-[ext_resource type="PackedScene" uid="uid://b0kys2aevrxo1" path="res://scenes/lu_card_collectible.tscn" id="6_qfnet"]
-=======
 [ext_resource type="Script" uid="uid://3a26rw16lubv" path="res://scripts/arrow_label.gd" id="4_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://d2sm01mx048bo" path="res://scenes/apple_tree.tscn" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://cqhbvslqxhsse" path="res://scenes/fire.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://b0kys2aevrxo1" path="res://scenes/lu_card_collectible.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://dirsoltgqyrnb" path="res://inventory/arrow_pickable.tscn" id="7_i7141"]
->>>>>>> 55b210f32ea3b5853bf6fa58a5df4745898ec810
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71j4m"]
 bg_color = Color(0.812696, 0.525556, 0.254121, 1)
@@ -26,7 +17,6 @@ y_sort_enabled = true
 position = Vector2(4, -1)
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
-bag = null
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2.5, 2.5)
@@ -84,10 +74,9 @@ text = "Temperature"
 [node name="Fire" parent="." instance=ExtResource("5_71j4m")]
 position = Vector2(-169, -288)
 
-<<<<<<< HEAD
 [node name="lu_card" parent="." instance=ExtResource("6_qfnet")]
 position = Vector2(57, 53)
-=======
+
 [node name="ArrowPickable" parent="." instance=ExtResource("7_i7141")]
 position = Vector2(66, 51)
 
@@ -105,4 +94,3 @@ position = Vector2(31, 82)
 
 [node name="ArrowPickable6" parent="." instance=ExtResource("7_i7141")]
 position = Vector2(153, 74)
->>>>>>> 55b210f32ea3b5853bf6fa58a5df4745898ec810
