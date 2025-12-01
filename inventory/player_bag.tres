@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_3nfyg")
-items = Array[ExtResource("1_3nfyg")]([null, null, null, null, null, null])
+slots = null
 metadata/_custom_type_script = "uid://ccega3htw5wh8"
