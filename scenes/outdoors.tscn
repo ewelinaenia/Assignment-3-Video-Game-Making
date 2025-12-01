@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bl3yljka0r2k5" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_01/Size_02.png" id="6_83xa4"]
 [ext_resource type="Texture2D" uid="uid://bekuw0m36ovsf" path="res://assets/Modern tiles_Free/Outdoors_free/Shadows.png" id="7_83xa4"]
 [ext_resource type="Texture2D" uid="uid://bkbiutobjxjtw" path="res://assets/Modern tiles_Free/Outdoors_free/Furniture.png" id="8_k4eu6"]
-[ext_resource type="PackedScene" path="res://scenes/apple_tree.tscn" id="9_brwx0"]
+[ext_resource type="PackedScene" uid="uid://d2sm01mx048bo" path="res://scenes/apple_tree.tscn" id="9_brwx0"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="10_glakt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4eu6"]
