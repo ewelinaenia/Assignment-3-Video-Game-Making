@@ -231,7 +231,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 5.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 script = ExtResource("1_g2els")
 bag = ExtResource("2_dqkch")
