@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0jj1t1k0nngh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Resource" uid="uid://dfwtyc2yjyciq" path="res://inventory/player_bag.tres" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://2aha6eh61fcj" path="res://assets/Character-Base.png" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://bhtrnv1psljax" path="res://inventory/items/bow.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -250,5 +251,7 @@ shape = SubResource("CircleShape2D_dt7fs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="Bow" parent="." instance=ExtResource("3_qhqgy")]
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
