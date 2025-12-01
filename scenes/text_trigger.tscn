@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp3mxyvn7bnfc"]
+
+[ext_resource type="Script" uid="uid://8ssc84ffpaij" path="res://scripts/TextTrigger.gd" id="1_u86en"]
+
+[node name="TextTrigger" type="Area2D"]
+script = ExtResource("1_u86en")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
