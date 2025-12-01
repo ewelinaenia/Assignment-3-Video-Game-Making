@@ -1,9 +1,17 @@
 extends Control
 
-var is_open = false
+@onready var inv: Inventory = preload("res://inventory/player_bag.tres")
+@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+var is_open = true
 
 func _ready():
-	close()
+	inv.update.connect(update_slots)
+	update_slots()
+	open()
+	
+func update_slots():
+	for i in range(min(inv.slots.size(), slots.size())):
+		slots[i].update(inv.slots[i])
 
 func _process(delta):
 	if Input.is_action_just_pressed("i"):
