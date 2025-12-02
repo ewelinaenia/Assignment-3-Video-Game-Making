@@ -12,7 +12,7 @@ func _ready():
 	if state == "no apples":
 		$growth_timer.start()
 		
-func _process(delta):
+func _process(_delta: float) -> void:
 	if state == "no apples":
 		$AnimatedSprite2D.play("no apples")
 	if state == "apples":
@@ -21,8 +21,8 @@ func _process(delta):
 			if Input.is_action_just_pressed("e"):
 				state = "no apples"
 				drop_apple()
-
-
+		
+		
 func _on_pickable_area_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		player_in_area = true 
