@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bl3yljka0r2k5" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_01/Size_02.png" id="6_83xa4"]
 [ext_resource type="Texture2D" uid="uid://bekuw0m36ovsf" path="res://assets/Modern tiles_Free/Outdoors_free/Shadows.png" id="7_83xa4"]
 [ext_resource type="Texture2D" uid="uid://bkbiutobjxjtw" path="res://assets/Modern tiles_Free/Outdoors_free/Furniture.png" id="8_k4eu6"]
-[ext_resource type="PackedScene" path="res://scenes/apple_tree.tscn" id="9_brwx0"]
+[ext_resource type="PackedScene" uid="uid://d2sm01mx048bo" path="res://scenes/apple_tree.tscn" id="9_brwx0"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="10_glakt"]
 [ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="12_sdcrn"]
 
@@ -1079,6 +1079,8 @@ sources/7 = SubResource("TileSetAtlasSource_54o7e")
 y_sort_enabled = true
 position = Vector2(0, -1)
 
+[node name="SpawnPoint" type="Marker2D" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
 y_sort_enabled = true
@@ -1101,12 +1103,12 @@ layer_5/name = "Vegetation"
 layer_5/tile_data = PackedInt32Array(458775, 393218, 11, -196614, 2, 10, -196597, 262146, 10, -262117, 65538, 10, 262179, 393217, 5, 983076, 393217, 4, 524326, 393217, 5, 1048616, 393217, 4, -196566, 458753, 5, 458796, 393217, 4, 1310766, 458753, 4, 262192, 393217, 4, 1769520, 458753, 4, 131123, 458753, 4, 131125, 458753, 5, 1245237, 393217, 4, 196662, 458753, 5, 655414, 458753, 4, 1114168, 458753, 5, 1835065, 393217, 5, 131133, 458753, 5, 1114175, 393217, 4, 1835075, 458753, 5, -327610, 393217, 5, 393286, 393217, 5, 852038, 458753, 5, 1638471, 393217, 5, 1114187, 393217, 5, 2031655, 458753, 5, 1966132, 393217, 4, 2424889, 393217, 4, 2228285, 393217, 5, 2162752, 458753, 4, 2162753, 393217, 5, 1966147, 458753, 5, -262109, 393218, 11, 1114147, 327682, 11, -262107, 131074, 11, 786471, 262146, 11, 1310759, 131074, 11, 1376297, 262146, 11, 1966121, 131074, 11, 1245226, 196610, 11, -327636, 393218, 11, 655404, 327682, 11, 458798, 196610, 11, 720945, 262146, 11, -196558, 327682, 11, 393266, 131074, 11, 196661, 196610, 11, 1507381, 196610, 11, 1507386, 393218, 11, -327621, 131074, 11, 852030, 327682, 11, 1507390, 327682, 11, -327617, 262146, 11, 196672, 131074, 11, 1114177, 131074, 11, 1507393, 262146, 11, 1245250, 131074, 11, -327612, 393218, 11, 1638468, 327682, 11, 589893, 393218, 11, 524358, 131074, 11, 1245258, 393218, 11, 1900622, 196610, 11, 524367, 393218, 11, 2293799, 131074, 11, 917532, 786434, 10, 983067, 851970, 10, 983069, 917506, 11, 917502, 786434, 10, 1179658, 786434, 10, 1179657, 851970, 10, 983045, 786434, 10, 983055, 786434, 10, 983056, 786434, 10, 917520, 786434, 10, 917521, 786434, 10, 1245208, 786434, 10, 917500, 851970, 10, 786436, 851970, 10, 1048586, 851970, 10, 1310743, 917506, 11, 983037, 917506, 11, 983044, 917506, 11, 1048582, 917506, 11, 327755, 196615, 25, 327756, 262151, 25, 196691, 196615, 25, 196692, 196615, 25, 196688, 196615, 25, 196689, 262151, 25, 196693, 262151, 25, 196694, 196615, 25, 196695, 262151, 25, 196687, 196615, 25, 65622, 131079, 21, 65629, 131079, 21, 65615, 720903, 28, 196696, 3080199, 4, 262232, 3080199, 5, 2490422, 458754, 10, 2555957, 262146, 10, 2490421, 524290, 10, 2162729, 327682, 11, 2031674, 327682, 11, 2424873, 393218, 11, 1835049, 524289, 4, 3145809, 589825, 4, 3211342, 458753, 4, 3211344, 655361, 3, 3997781, 655361, 3, 2752607, 3145735, 5, 3670091, 131074, 17, 2883671, 262146, 17, 3473499, 131074, 17, 3080285, 131074, 17, 3080286, 196610, 16, 3407969, 262146, 16, 3801183, 327682, 15, 2818122, 327682, 17)
 
 [node name="player" parent="." instance=ExtResource("5_srcf6")]
-position = Vector2(1266, 494)
+position = Vector2(1309, 66)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(744, 502)
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(4.99988, 3.00003)
 scale = Vector2(4621.5, 97.4161)
-zoom = Vector2(0.65, 0.65)
+zoom = Vector2(1.2, 1.2)
 
 [node name="apple_tree" parent="." instance=ExtResource("9_brwx0")]
 position = Vector2(1220, 608)
@@ -1144,8 +1146,6 @@ position = Vector2(1493, 548)
 [node name="apple_tree8" parent="." instance=ExtResource("9_brwx0")]
 position = Vector2(1377, 599)
 
-[node name="SpawnPoint" type="Node2D" parent="."]
-
 [node name="Portal_outside" parent="." instance=ExtResource("12_sdcrn")]
-position = Vector2(1308, 41)
+position = Vector2(1308, 46)
 scale = Vector2(1.27676, 1.34081)
