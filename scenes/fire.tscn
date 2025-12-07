@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqhbvslqxhsse"]
+[gd_scene load_steps=15 format=3 uid="uid://cqhbvslqxhsse"]
 
-[ext_resource type="Script" uid="uid://dyclookc403ch" path="res://scenes/fire.gd" id="1_52nqi"]
 [ext_resource type="Shader" uid="uid://hfojoo7bm2o0" path="res://shaders/fire_shader.tres" id="2_txieb"]
 [ext_resource type="Texture2D" uid="uid://dr1k0e024ifs" path="res://textures/T_VFX_Noise_465.png" id="3_4l61p"]
 [ext_resource type="Texture2D" uid="uid://cq7ca1iqav0yf" path="res://textures/T_Gradient_circle22.jpg" id="4_10wrr"]
 [ext_resource type="Texture2D" uid="uid://dtoep1ph0w3ax" path="res://textures/T_1_pixel (1).jpg" id="5_theev"]
+[ext_resource type="Script" uid="uid://dnf0q72d8x4e6" path="res://scripts/fire.gd" id="5_txieb"]
 
 [sub_resource type="Gradient" id="Gradient_3l77w"]
 
@@ -36,10 +36,12 @@ shader_parameter/Texture_4 = SubResource("GradientTexture2D_tuqhi")
 shader_parameter/Texture_5 = SubResource("GradientTexture1D_4l61p")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_10wrr"]
-radius = 30.1496
+radius = 19.0263
 
-[node name="Fire" type="Area2D"]
-script = ExtResource("1_52nqi")
+[sub_resource type="CircleShape2D" id="CircleShape2D_txieb"]
+radius = 31.0161
+
+[node name="Fire" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_jwixg")
@@ -51,5 +53,12 @@ texture = ExtResource("5_theev")
 position = Vector2(261, 212)
 shape = SubResource("CircleShape2D_10wrr")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_txieb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(262, 212)
+shape = SubResource("CircleShape2D_txieb")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

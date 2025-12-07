@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3nq0j56e02ha"]
+
+[node name="HCanvasLayer" type="CanvasLayer"]
+
+[node name="HungerBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+value = 100.0
+show_percentage = false
