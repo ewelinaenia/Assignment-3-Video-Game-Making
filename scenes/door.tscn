@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bkl42rj64n645"]
+
+[node name="door" type="StaticBody2D"]

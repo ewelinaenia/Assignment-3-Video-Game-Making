@@ -1,17 +1,16 @@
-<<<<<<< HEAD
-[gd_scene load_steps=7 format=3 uid="uid://bm6h55kmro3a"]
-=======
-[gd_scene load_steps=16 format=3 uid="uid://bm6h55kmro3a"]
->>>>>>> 09cb4230dba762a002c993d886df0476f72007e0
+[gd_scene load_steps=26 format=3 uid="uid://c33cua7l4cp28"]
 
 [ext_resource type="Texture2D" uid="uid://4kw6j4yv4bh2" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_1rro3"]
 [ext_resource type="Texture2D" uid="uid://c133vkrv6lho0" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="2_aascb"]
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="3_aascb"]
-<<<<<<< HEAD
-=======
+[ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="4_fcas3"]
 [ext_resource type="PackedScene" uid="uid://cp3mxyvn7bnfc" path="res://scenes/text_trigger.tscn" id="5_sl187"]
+[ext_resource type="Script" uid="uid://3a26rw16lubv" path="res://scripts/arrow_label.gd" id="5_tp1va"]
 [ext_resource type="FontFile" uid="uid://cp7hr4fr034j7" path="res://assets/fonts/PixelOperator8.ttf" id="6_mlvvt"]
->>>>>>> 09cb4230dba762a002c993d886df0476f72007e0
+[ext_resource type="PackedScene" uid="uid://b0kys2aevrxo1" path="res://scenes/lu_card_collectible.tscn" id="6_x4iar"]
+[ext_resource type="PackedScene" uid="uid://bkl42rj64n645" path="res://scenes/door.tscn" id="7_a3pr0"]
+[ext_resource type="Script" uid="uid://d4evnjuto4hb5" path="res://scripts/door.gd" id="8_x4iar"]
+[ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="11_tp1va"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a2g1"]
 texture = ExtResource("1_1rro3")
@@ -1614,6 +1613,18 @@ size = Vector2(31, 129)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcas3"]
 size = Vector2(65, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp1va"]
+size = Vector2(169, 25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fcas3"]
+radius = 27.0046
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tp1va"]
+radius = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5vkf"]
+size = Vector2(160, 54)
+
 [node name="Uni" type="Node2D"]
 y_sort_enabled = true
 
@@ -1636,11 +1647,7 @@ layer_5/name = "Clutter"
 layer_5/tile_data = PackedInt32Array(983061, 589825, 35, 1048597, 589825, 36, 131091, 786433, 31, 196627, 786433, 32, 589843, 786433, 31, 655379, 786433, 32, 2228229, 786433, 45)
 
 [node name="player" parent="." instance=ExtResource("3_aascb")]
-<<<<<<< HEAD
-position = Vector2(431, 58)
-=======
 position = Vector2(232, 28)
->>>>>>> 09cb4230dba762a002c993d886df0476f72007e0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)
@@ -1648,6 +1655,34 @@ limit_left = -15
 limit_top = -30
 limit_right = 606
 limit_bottom = 765
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("4_fcas3")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -72.0
+offset_right = 0.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 30.0
+grow_horizontal = 0
+text = "Arrow:3"
+script = ExtResource("5_tp1va")
 
 [node name="Decor" type="Node" parent="."]
 
@@ -1688,13 +1723,6 @@ texture = ExtResource("2_aascb")
 region_enabled = true
 region_rect = Rect2(13, 161, 38, 37)
 
-<<<<<<< HEAD
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(261, 765)
-
-[node name="player2" parent="." instance=ExtResource("3_aascb")]
-position = Vector2(134, 648)
-=======
 [node name="Borders" type="Node" parent="."]
 
 [node name="Border" type="StaticBody2D" parent="Borders"]
@@ -1810,4 +1838,59 @@ autowrap_mode = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger6"]
 position = Vector2(4.5, 10)
 shape = SubResource("RectangleShape2D_fcas3")
->>>>>>> 09cb4230dba762a002c993d886df0476f72007e0
+
+[node name="TextTrigger7" parent="." instance=ExtResource("5_sl187")]
+position = Vector2(172, 722)
+
+[node name="Label" type="Label" parent="TextTrigger7"]
+offset_left = -62.0
+offset_top = -28.0
+offset_right = 80.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("6_mlvvt")
+theme_override_font_sizes/font_size = 8
+text = "The door is locked. 
+I'll try my LU-card."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger7"]
+position = Vector2(3.5, 2.5)
+shape = SubResource("RectangleShape2D_tp1va")
+
+[node name="lu_card" parent="." instance=ExtResource("6_x4iar")]
+position = Vector2(330, 588)
+
+[node name="door" parent="." instance=ExtResource("7_a3pr0")]
+position = Vector2(127, 760)
+script = ExtResource("8_x4iar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(1, -8)
+shape = SubResource("CircleShape2D_fcas3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="door"]
+position = Vector2(98, -8)
+shape = SubResource("CircleShape2D_tp1va")
+
+[node name="Area2D" type="Area2D" parent="door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/Area2D"]
+position = Vector2(48, -17)
+shape = SubResource("RectangleShape2D_v5vkf")
+
+[node name="Portal_outside" parent="." instance=ExtResource("11_tp1va")]
+position = Vector2(123, 739)
+
+[node name="Portal_outside2" parent="." instance=ExtResource("11_tp1va")]
+position = Vector2(136, 739)
+
+[node name="Portal_outside3" parent="." instance=ExtResource("11_tp1va")]
+position = Vector2(219, 740)
+
+[node name="Portal_outside4" parent="." instance=ExtResource("11_tp1va")]
+position = Vector2(232, 740)
+
+[connection signal="card_collected" from="lu_card" to="door" method="_on_lu_card_card_collected"]
+[connection signal="body_entered" from="door/Area2D" to="lu_card" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="door/Area2D" to="lu_card" method="_on_area_2d_body_exited"]
