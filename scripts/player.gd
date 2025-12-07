@@ -107,6 +107,9 @@ func _update_temperature(delta: float) -> void:
 		temperature -= temp_loss_per_sec * delta
 	temperature = clamp(temperature, 0.0, max_temperature)
 	
+	if temperature <= 0.0:
+		player_state = "dead"
+	
 func _update_ui() -> void:
 	if temperature_bar:
 		temperature_bar.value = temperature			
