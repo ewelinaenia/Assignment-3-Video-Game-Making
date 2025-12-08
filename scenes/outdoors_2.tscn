@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=34 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
