@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="3_aascb"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="4_fcas3"]
 [ext_resource type="PackedScene" uid="uid://cp3mxyvn7bnfc" path="res://scenes/text_trigger.tscn" id="5_sl187"]
-[ext_resource type="Script" path="res://scripts/arrow_label.gd" id="5_tp1va"]
+[ext_resource type="Script" uid="uid://3a26rw16lubv" path="res://scripts/arrow_label.gd" id="5_tp1va"]
 [ext_resource type="FontFile" uid="uid://cp7hr4fr034j7" path="res://assets/fonts/PixelOperator8.ttf" id="6_mlvvt"]
 [ext_resource type="PackedScene" uid="uid://b0kys2aevrxo1" path="res://scenes/lu_card_collectible.tscn" id="6_x4iar"]
 [ext_resource type="PackedScene" uid="uid://bkl42rj64n645" path="res://scenes/door.tscn" id="7_a3pr0"]

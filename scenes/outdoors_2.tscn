@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=33 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://nl0q3bk2hhmi" path="res://assets/Modern tiles_Free/Outdoors_free/Wall_Variations.png" id="10_8a845"]
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="11_tskkl"]
 [ext_resource type="PackedScene" uid="uid://cqhbvslqxhsse" path="res://scenes/fire.tscn" id="12_8a845"]
+[ext_resource type="PackedScene" uid="uid://dirsoltgqyrnb" path="res://inventory/arrow_pickable.tscn" id="13_iuak1"]
 [ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="14_qhfi5"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="15_7mgad"]
 
@@ -1839,11 +1840,83 @@ position = Vector2(157, 849)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(5, 4)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(2, 2)
 limit_left = 40
 limit_top = 770
 limit_right = 1587
 limit_bottom = 1755
+
+[node name="ArrowPickable" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(164, 74)
+
+[node name="ArrowPickable2" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(-70, 302)
+
+[node name="ArrowPickable3" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(211, 258)
+
+[node name="ArrowPickable4" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(189, 217)
+
+[node name="ArrowPickable5" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(-70, 59)
+
+[node name="ArrowPickable6" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(-63, 84)
+
+[node name="slime" parent="player" instance=ExtResource("15_7mgad")]
+position = Vector2(75, 121)
+
+[node name="slime2" parent="player" instance=ExtResource("15_7mgad")]
+position = Vector2(127, 175)
+
+[node name="slime3" parent="player" instance=ExtResource("15_7mgad")]
+position = Vector2(504, 309)
+
+[node name="slime4" parent="player" instance=ExtResource("15_7mgad")]
+position = Vector2(327, 633)
+
+[node name="ArrowPickable7" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(366, 552)
+
+[node name="ArrowPickable8" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(119, 510)
+
+[node name="ArrowPickable9" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(109, 495)
+
+[node name="ArrowPickable10" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(84, 537)
+
+[node name="ArrowPickable11" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(219, 476)
+
+[node name="slime5" parent="player" instance=ExtResource("15_7mgad")]
+position = Vector2(753, 505)
+
+[node name="ArrowPickable12" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(842, 376)
+
+[node name="ArrowPickable13" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(823, 356)
+
+[node name="slime6" parent="player" instance=ExtResource("15_7mgad")]
+position = Vector2(1126, 152)
+
+[node name="ArrowPickable14" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(777, 70)
+
+[node name="ArrowPickable15" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(748, 86)
+
+[node name="ArrowPickable16" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(575, 172)
+
+[node name="ArrowPickable17" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(602, 178)
+
+[node name="ArrowPickable18" parent="player" instance=ExtResource("13_iuak1")]
+position = Vector2(583, 193)
 
 [node name="Fire" parent="." instance=ExtResource("12_8a845")]
 position = Vector2(301, 918)
