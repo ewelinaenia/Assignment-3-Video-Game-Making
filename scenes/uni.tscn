@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b0kys2aevrxo1" path="res://scenes/lu_card_collectible.tscn" id="6_x4iar"]
 [ext_resource type="PackedScene" uid="uid://bkl42rj64n645" path="res://scenes/door.tscn" id="7_a3pr0"]
 [ext_resource type="Script" uid="uid://d4evnjuto4hb5" path="res://scripts/door.gd" id="8_x4iar"]
-[ext_resource type="PackedScene" uid="uid://dm8f06qnmssxt" path="res://scenes/cutscene_transition.tscn" id="11_tp1va"]
+[ext_resource type="PackedScene" path="res://scenes/cutscene_transition.tscn" id="11_tp1va"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a2g1"]
 texture = ExtResource("1_1rro3")
