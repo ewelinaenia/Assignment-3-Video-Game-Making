@@ -11,4 +11,3 @@ func _ready() -> void:
 func _on_lu_card_card_collected() -> void:
 	doorL.set_deferred("disabled",true)
 	doorR.set_deferred("disabled",true)
-	print("opened")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c33cua7l4cp28"]
+[gd_scene load_steps=28 format=3 uid="uid://c33cua7l4cp28"]
 
 [ext_resource type="Texture2D" uid="uid://4kw6j4yv4bh2" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="1_1rro3"]
 [ext_resource type="Texture2D" uid="uid://c133vkrv6lho0" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="2_aascb"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b0kys2aevrxo1" path="res://scenes/lu_card_collectible.tscn" id="6_x4iar"]
 [ext_resource type="PackedScene" uid="uid://bkl42rj64n645" path="res://scenes/door.tscn" id="7_a3pr0"]
 [ext_resource type="Script" uid="uid://d4evnjuto4hb5" path="res://scripts/door.gd" id="8_x4iar"]
-[ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="11_tp1va"]
+[ext_resource type="PackedScene" uid="uid://dm8f06qnmssxt" path="res://scenes/cutscene_transition.tscn" id="11_tp1va"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a2g1"]
 texture = ExtResource("1_1rro3")
@@ -1625,6 +1625,12 @@ radius = 26.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5vkf"]
 size = Vector2(160, 54)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ya8a6"]
+radius = 25.02
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjj42"]
+radius = 24.0208
+
 [node name="Uni" type="Node2D"]
 y_sort_enabled = true
 
@@ -1859,7 +1865,7 @@ position = Vector2(3.5, 2.5)
 shape = SubResource("RectangleShape2D_tp1va")
 
 [node name="lu_card" parent="." instance=ExtResource("6_x4iar")]
-position = Vector2(330, 588)
+position = Vector2(532, 32)
 
 [node name="door" parent="." instance=ExtResource("7_a3pr0")]
 position = Vector2(127, 760)
@@ -1879,18 +1885,18 @@ shape = SubResource("CircleShape2D_tp1va")
 position = Vector2(48, -17)
 shape = SubResource("RectangleShape2D_v5vkf")
 
-[node name="Portal_outside" parent="." instance=ExtResource("11_tp1va")]
-position = Vector2(123, 739)
+[node name="cutscene_transition" parent="." instance=ExtResource("11_tp1va")]
+position = Vector2(175, 793)
 
-[node name="Portal_outside2" parent="." instance=ExtResource("11_tp1va")]
-position = Vector2(136, 739)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cutscene_transition"]
+position = Vector2(-47, -41)
+shape = SubResource("CircleShape2D_ya8a6")
 
-[node name="Portal_outside3" parent="." instance=ExtResource("11_tp1va")]
-position = Vector2(219, 740)
-
-[node name="Portal_outside4" parent="." instance=ExtResource("11_tp1va")]
-position = Vector2(232, 740)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cutscene_transition"]
+position = Vector2(50, -41)
+shape = SubResource("CircleShape2D_rjj42")
 
 [connection signal="card_collected" from="lu_card" to="door" method="_on_lu_card_card_collected"]
 [connection signal="body_entered" from="door/Area2D" to="lu_card" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="door/Area2D" to="lu_card" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="cutscene_transition" to="cutscene_transition" method="_on_cutscene_transition_body_entered"]

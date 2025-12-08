@@ -117,3 +117,7 @@ func _update_ui() -> void:
 func apply_knockback(direction, force, knockback_duration)->void:
 	knockback = direction * force
 	knockback_timer = knockback_duration
+
+
+func _on_cutscene_transition_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
