@@ -9,7 +9,6 @@ func _on_interactable_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		if cardtaken == false:
 			cardtaken = true
-			print("taken")
 			emit_signal("card_collected")
 		player = body
 		playercollect()
