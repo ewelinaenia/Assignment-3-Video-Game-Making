@@ -1849,78 +1849,6 @@ limit_top = 770
 limit_right = 1587
 limit_bottom = 1755
 
-[node name="ArrowPickable" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(164, 74)
-
-[node name="ArrowPickable2" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(-70, 302)
-
-[node name="ArrowPickable3" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(211, 258)
-
-[node name="ArrowPickable4" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(189, 217)
-
-[node name="ArrowPickable5" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(-70, 59)
-
-[node name="ArrowPickable6" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(-63, 84)
-
-[node name="slime" parent="player" instance=ExtResource("15_7mgad")]
-position = Vector2(75, 121)
-
-[node name="slime2" parent="player" instance=ExtResource("15_7mgad")]
-position = Vector2(127, 175)
-
-[node name="slime3" parent="player" instance=ExtResource("15_7mgad")]
-position = Vector2(504, 309)
-
-[node name="slime4" parent="player" instance=ExtResource("15_7mgad")]
-position = Vector2(327, 633)
-
-[node name="ArrowPickable7" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(366, 552)
-
-[node name="ArrowPickable8" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(119, 510)
-
-[node name="ArrowPickable9" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(109, 495)
-
-[node name="ArrowPickable10" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(84, 537)
-
-[node name="ArrowPickable11" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(219, 476)
-
-[node name="slime5" parent="player" instance=ExtResource("15_7mgad")]
-position = Vector2(753, 505)
-
-[node name="ArrowPickable12" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(842, 376)
-
-[node name="ArrowPickable13" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(823, 356)
-
-[node name="slime6" parent="player" instance=ExtResource("15_7mgad")]
-position = Vector2(1126, 152)
-
-[node name="ArrowPickable14" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(777, 70)
-
-[node name="ArrowPickable15" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(748, 86)
-
-[node name="ArrowPickable16" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(575, 172)
-
-[node name="ArrowPickable17" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(602, 178)
-
-[node name="ArrowPickable18" parent="player" instance=ExtResource("13_iuak1")]
-position = Vector2(583, 193)
-
 [node name="Fire" parent="." instance=ExtResource("12_8a845")]
 position = Vector2(301, 918)
 
@@ -1965,6 +1893,78 @@ shape = SubResource("WorldBoundaryShape2D_oywlg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 shape = SubResource("WorldBoundaryShape2D_f837i")
+
+[node name="ArrowPickable" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(321, 923)
+
+[node name="ArrowPickable2" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(87, 1151)
+
+[node name="ArrowPickable3" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(368, 1107)
+
+[node name="ArrowPickable4" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(346, 1066)
+
+[node name="ArrowPickable5" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(87, 908)
+
+[node name="ArrowPickable6" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(94, 933)
+
+[node name="slime4" parent="." instance=ExtResource("15_7mgad")]
+position = Vector2(232, 970)
+
+[node name="slime5" parent="." instance=ExtResource("15_7mgad")]
+position = Vector2(284, 1024)
+
+[node name="slime6" parent="." instance=ExtResource("15_7mgad")]
+position = Vector2(661, 1158)
+
+[node name="slime7" parent="." instance=ExtResource("15_7mgad")]
+position = Vector2(484, 1482)
+
+[node name="ArrowPickable7" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(523, 1401)
+
+[node name="ArrowPickable8" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(276, 1359)
+
+[node name="ArrowPickable9" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(266, 1344)
+
+[node name="ArrowPickable10" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(241, 1386)
+
+[node name="ArrowPickable11" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(376, 1325)
+
+[node name="slime8" parent="." instance=ExtResource("15_7mgad")]
+position = Vector2(910, 1354)
+
+[node name="ArrowPickable12" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(999, 1225)
+
+[node name="ArrowPickable13" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(980, 1205)
+
+[node name="slime9" parent="." instance=ExtResource("15_7mgad")]
+position = Vector2(1283, 1001)
+
+[node name="ArrowPickable14" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(934, 919)
+
+[node name="ArrowPickable15" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(905, 935)
+
+[node name="ArrowPickable16" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(732, 1021)
+
+[node name="ArrowPickable17" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(759, 1027)
+
+[node name="ArrowPickable18" parent="." instance=ExtResource("13_iuak1")]
+position = Vector2(740, 1042)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
