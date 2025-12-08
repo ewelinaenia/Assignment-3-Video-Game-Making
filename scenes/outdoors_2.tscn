@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=37 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="14_qhfi5"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="15_7mgad"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="17_f837i"]
-[ext_resource type="Script" uid="uid://3a26rw16lubv" path="res://scripts/arrow_label.gd" id="18_knwae"]
+[ext_resource type="Script" path="res://scripts/arrow_label.gd" id="18_knwae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuak1"]
 texture = ExtResource("1_jga56")
@@ -1425,10 +1425,13 @@ texture = ExtResource("9_lief0")
 16:24/0 = 0
 6:0/size_in_atlas = Vector2i(6, 8)
 6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(46.2869, -17.7809, 44.029, 12.1362, 41.2066, 62.3744, -3.38685, 62.9388, -43.4645, 63.5033, -47.4158, 14.3941, -46.8513, -40.9244, -28.7882, -42.6178, -31.6105, -54.4717, -22.0145, -62.3744, 23.1434, -60.6809, 31.6105, -40.9244, 40.6421, -46.0046)
 6:10/size_in_atlas = Vector2i(6, 2)
 6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(37.7703, -7.82385, 29.1371, -5.66555, 22.4823, 9.26273, -1.59315, 10.9928, -21.9855, 10.6741, -18.7992, 1.11521, -27.4022, -0.159317, -27.7209, -9.39961, -36.9612, -6.85056, -38.4898, -15.1981, 41.7406, -15.135)
 6:12/size_in_atlas = Vector2i(6, 2)
 6:12/0 = 0
+6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(37.7703, -7.82385, 29.1371, -5.66555, 22.4823, 9.26273, -1.59315, 10.9928, -21.9855, 10.6741, -18.7992, 1.11521, -27.4022, -0.159317, -27.7209, -9.39961, -36.9612, -6.85056, -38.4898, -15.1981, 41.7406, -15.135)
 6:14/0 = 0
 7:15/0 = 0
 8:15/0 = 0
@@ -1816,6 +1819,9 @@ distance = -1591.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mgad"]
 bg_color = Color(0.812696, 0.525556, 0.254121, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f837i"]
+size = Vector2(126, 96)
+
 [node name="outdoors2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2012,3 +2018,21 @@ offset_bottom = 30.0
 grow_horizontal = 0
 text = "Arrow:3"
 script = ExtResource("18_knwae")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(1138, 810)
+shape = SubResource("RectangleShape2D_f837i")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(963, 810)
+shape = SubResource("RectangleShape2D_f837i")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(1047, 766)
+shape = SubResource("RectangleShape2D_f837i")
