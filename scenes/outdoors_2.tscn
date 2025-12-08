@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=32 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
@@ -1795,6 +1795,21 @@ sources/8 = SubResource("TileSetAtlasSource_qhfi5")
 sources/9 = SubResource("TileSetAtlasSource_7mgad")
 sources/10 = SubResource("TileSetAtlasSource_sqsis")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7mgad"]
+normal = Vector2(0.0232158, 0.999731)
+distance = 769.443
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iuak1"]
+normal = Vector2(0.999861, 0.0166644)
+distance = 51.0262
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oywlg"]
+distance = -1754.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f837i"]
+normal = Vector2(-1, 0)
+distance = -1591.0
+
 [node name="outdoors2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1825,7 +1840,10 @@ position = Vector2(157, 849)
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(5, 4)
 zoom = Vector2(1.2, 1.2)
-limit_top = 755
+limit_left = 40
+limit_top = 770
+limit_right = 1587
+limit_bottom = 1755
 
 [node name="Fire" parent="." instance=ExtResource("12_8a845")]
 position = Vector2(301, 918)
@@ -1851,3 +1869,23 @@ position = Vector2(1240, 1159)
 
 [node name="slime3" parent="." instance=ExtResource("15_7mgad")]
 position = Vector2(1052, 913)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_7mgad")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_iuak1")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_oywlg")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("WorldBoundaryShape2D_f837i")
