@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=33 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
@@ -1810,6 +1810,9 @@ distance = -1754.0
 normal = Vector2(-1, 0)
 distance = -1591.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mgad"]
+bg_color = Color(0.812696, 0.525556, 0.254121, 1)
+
 [node name="outdoors2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1889,3 +1892,20 @@ shape = SubResource("WorldBoundaryShape2D_oywlg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 shape = SubResource("WorldBoundaryShape2D_f837i")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TemperatureBar" type="ProgressBar" parent="CanvasLayer2"]
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 18.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7mgad")
+value = 100.0
+show_percentage = false
+
+[node name="TemperatureLabel" type="Label" parent="CanvasLayer2"]
+offset_left = 118.0
+offset_top = -1.0
+offset_right = 220.0
+offset_bottom = 22.0
+text = "Temperature"

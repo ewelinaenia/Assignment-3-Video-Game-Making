@@ -107,8 +107,10 @@ func _update_temperature(delta: float) -> void:
 		temperature -= temp_loss_per_sec * delta
 	temperature = clamp(temperature, 0.0, max_temperature)
 	
-	if temperature <= 0.0:
-		player_state = "dead"
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	if current_scene_file == "res://scenes/outdoors_2.tscn":
+		if temperature <= 0.0:
+			player_state = "dead"
 	
 func _update_ui() -> void:
 	if temperature_bar:
