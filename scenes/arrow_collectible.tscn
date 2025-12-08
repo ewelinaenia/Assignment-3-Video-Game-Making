@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwhamxgeysaxi"]
+
+[ext_resource type="Script" uid="uid://cgdnuk55g6g4l" path="res://scripts/arrow_collectable.gd" id="1_6xpug"]
+[ext_resource type="Resource" uid="uid://ekpk3x3jci5n" path="res://inventory/items/arrow.tres" id="2_c2exm"]
+[ext_resource type="Texture2D" uid="uid://cmsrc1gmiuofr" path="res://textures/arrow.png" id="3_c2exm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hu6q8"]
+radius = 20.0062
+
+[node name="lu_card" type="StaticBody2D"]
+script = ExtResource("1_6xpug")
+item = ExtResource("2_c2exm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_c2exm")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_hu6q8")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

@@ -26,9 +26,6 @@ var bow:Node2D
 
 func _ready() -> void:
 	bow = $Bow
-	
-func is_player()->bool:
-	return true
 
 func _physics_process(delta: float) -> void:
 	if player_state != "dead":

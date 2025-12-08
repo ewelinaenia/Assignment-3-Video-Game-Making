@@ -17,7 +17,9 @@ var errorStream1:AudioStream
 var charge_start_time: float = 0.0
 @export var max_speed: float = 200.0
 @export var min_speed: float = 20.0
-@export var max_charge_time: float = 2.0 
+@export var max_charge_time: float = 2.0
+@export var bag: Inventory
+
 
 func _ready() -> void:
 	animatedSprite = $AnimatedSprite2D
@@ -30,7 +32,10 @@ func charging():
 	if animatedSprite.is_playing():
 		print("animatedSprite is playing")
 		return
-	if EventBus.get_arrow_number()<=0:
+	if bag == null:
+		print("bag is null")
+		return
+	if bag.get_item_count("arrow")<=0:
 		playStream(errorStream1)
 		return
 	charge_start_time = Time.get_ticks_msec() / 1000.0
@@ -49,9 +54,12 @@ func shoot():
 	if arrowScene == null:
 		print("The bow does not specify an arrow")
 		return
-	if EventBus.get_arrow_number()<=0:
+	if bag == null:
+		print("bag is null")
 		return
-	EventBus.remove_arrow()
+	if bag.get_item_count("arrow")<=0:
+		return
+	bag.remove_one_by_name("arrow")
 	playStream(shootStream)
 	var now = Time.get_ticks_msec() / 1000.0
 	var charge_time = now - charge_start_time

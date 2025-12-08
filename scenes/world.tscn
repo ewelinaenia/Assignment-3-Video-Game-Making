@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfjdly44oa00g"]
+[gd_scene load_steps=7 format=3 uid="uid://dfjdly44oa00g"]
 
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="3_4wyf3"]
-[ext_resource type="Script" uid="uid://3a26rw16lubv" path="res://scripts/arrow_label.gd" id="4_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://d2sm01mx048bo" path="res://scenes/apple_tree.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dwhamxgeysaxi" path="res://scenes/arrow_collectible.tscn" id="5_qfnet"]
 [ext_resource type="PackedScene" uid="uid://b0kys2aevrxo1" path="res://scenes/lu_card_collectible.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://dirsoltgqyrnb" path="res://inventory/arrow_pickable.tscn" id="7_i7141"]
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -33,40 +32,31 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -68.0
-offset_top = 7.0
-offset_right = -7.0
-offset_bottom = 30.0
-grow_horizontal = 0
-text = "Arrow:3"
-script = ExtResource("4_4mrxx")
-
 [node name="slime" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(-86, -15)
 
 [node name="apple_tree" parent="." instance=ExtResource("4_k0juu")]
 
+[node name="arrow" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(67, -6)
+
 [node name="lu_card" parent="." instance=ExtResource("6_qfnet")]
 position = Vector2(57, 53)
 
-[node name="ArrowPickable" parent="." instance=ExtResource("7_i7141")]
-position = Vector2(66, 51)
+[node name="arrow2" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(112, -45)
 
-[node name="ArrowPickable2" parent="." instance=ExtResource("7_i7141")]
-position = Vector2(119, 54)
+[node name="arrow3" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(10, -61)
 
-[node name="ArrowPickable3" parent="." instance=ExtResource("7_i7141")]
-position = Vector2(78, 96)
+[node name="arrow4" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(-22, 57)
 
-[node name="ArrowPickable4" parent="." instance=ExtResource("7_i7141")]
-position = Vector2(125, -15)
+[node name="arrow5" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(-102, 78)
 
-[node name="ArrowPickable5" parent="." instance=ExtResource("7_i7141")]
-position = Vector2(31, 82)
+[node name="arrow6" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(-66, -109)
 
-[node name="ArrowPickable6" parent="." instance=ExtResource("7_i7141")]
-position = Vector2(153, 74)
+[node name="arrow7" parent="." instance=ExtResource("5_qfnet")]
+position = Vector2(-126, -84)

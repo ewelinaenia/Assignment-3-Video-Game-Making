@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://nl0q3bk2hhmi" path="res://assets/Modern tiles_Free/Outdoors_free/Wall_Variations.png" id="10_8a845"]
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="11_tskkl"]
 [ext_resource type="PackedScene" uid="uid://cqhbvslqxhsse" path="res://scenes/fire.tscn" id="12_8a845"]
-[ext_resource type="PackedScene" uid="uid://dirsoltgqyrnb" path="res://inventory/arrow_pickable.tscn" id="13_iuak1"]
+[ext_resource type="PackedScene" uid="uid://dirsoltgqyrnb" path="res://scenes/arrow_collectable.tscn" id="13_iuak1"]
 [ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="14_qhfi5"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="15_7mgad"]
 
