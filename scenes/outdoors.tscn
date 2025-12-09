@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cc4en3os4n12j"]
+[gd_scene load_steps=26 format=3 uid="uid://cc4en3os4n12j"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_ayhkl"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_ngke6"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dirsoltgqyrnb" path="res://scenes/arrow_collectable.tscn" id="10_fyh2i"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="10_glakt"]
 [ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="12_sdcrn"]
+[ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="14_mp537"]
+[ext_resource type="Script" uid="uid://3a26rw16lubv" path="res://scripts/arrow_label.gd" id="15_ibt4e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4eu6"]
 texture = ExtResource("1_ayhkl")
@@ -1232,3 +1234,31 @@ position = Vector2(615, 141)
 
 [node name="ArrowPickable15" parent="." instance=ExtResource("10_fyh2i")]
 position = Vector2(1085, -9)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("14_mp537")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -72.0
+offset_right = 0.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 30.0
+grow_horizontal = 0
+text = "Arrow:3"
+script = ExtResource("15_ibt4e")
