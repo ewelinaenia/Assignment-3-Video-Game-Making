@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_hu6q8"]
 radius = 20.0062
 
-[node name="lu_card" type="StaticBody2D"]
+[node name="arrow" type="StaticBody2D"]
 script = ExtResource("1_6xpug")
 item = ExtResource("2_c2exm")
 

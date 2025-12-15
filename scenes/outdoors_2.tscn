@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=36 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
@@ -13,11 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://nl0q3bk2hhmi" path="res://assets/Modern tiles_Free/Outdoors_free/Wall_Variations.png" id="10_8a845"]
 [ext_resource type="PackedScene" uid="uid://bht2fnergww5r" path="res://scenes/player.tscn" id="11_tskkl"]
 [ext_resource type="PackedScene" uid="uid://cqhbvslqxhsse" path="res://scenes/fire.tscn" id="12_8a845"]
-[ext_resource type="PackedScene" uid="uid://dirsoltgqyrnb" path="res://scenes/arrow_collectable.tscn" id="13_iuak1"]
 [ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="14_qhfi5"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="15_7mgad"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="17_f837i"]
-[ext_resource type="Script" uid="uid://3a26rw16lubv" path="res://scripts/arrow_label.gd" id="18_knwae"]
+[ext_resource type="PackedScene" uid="uid://dwhamxgeysaxi" path="res://scenes/arrow_collectible.tscn" id="17_oywlg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuak1"]
 texture = ExtResource("1_jga56")
@@ -1902,22 +1901,22 @@ shape = SubResource("WorldBoundaryShape2D_oywlg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 shape = SubResource("WorldBoundaryShape2D_f837i")
 
-[node name="ArrowPickable" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(321, 923)
 
-[node name="ArrowPickable2" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable2" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(87, 1151)
 
-[node name="ArrowPickable3" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable3" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(368, 1107)
 
-[node name="ArrowPickable4" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable4" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(346, 1066)
 
-[node name="ArrowPickable5" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable5" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(87, 908)
 
-[node name="ArrowPickable6" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable6" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(94, 933)
 
 [node name="slime4" parent="." instance=ExtResource("15_7mgad")]
@@ -1932,46 +1931,46 @@ position = Vector2(661, 1158)
 [node name="slime7" parent="." instance=ExtResource("15_7mgad")]
 position = Vector2(484, 1482)
 
-[node name="ArrowPickable7" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable7" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(523, 1401)
 
-[node name="ArrowPickable8" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable8" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(276, 1359)
 
-[node name="ArrowPickable9" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable9" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(266, 1344)
 
-[node name="ArrowPickable10" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable10" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(241, 1386)
 
-[node name="ArrowPickable11" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable11" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(376, 1325)
 
 [node name="slime8" parent="." instance=ExtResource("15_7mgad")]
 position = Vector2(910, 1354)
 
-[node name="ArrowPickable12" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable12" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(999, 1225)
 
-[node name="ArrowPickable13" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable13" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(980, 1205)
 
 [node name="slime9" parent="." instance=ExtResource("15_7mgad")]
 position = Vector2(1283, 1001)
 
-[node name="ArrowPickable14" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable14" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(934, 919)
 
-[node name="ArrowPickable15" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable15" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(905, 935)
 
-[node name="ArrowPickable16" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable16" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(732, 1021)
 
-[node name="ArrowPickable17" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable17" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(759, 1027)
 
-[node name="ArrowPickable18" parent="." instance=ExtResource("13_iuak1")]
+[node name="ArrowPickable18" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(740, 1042)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -2006,18 +2005,6 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
-
-[node name="Label" type="Label" parent="CanvasLayer3"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -68.0
-offset_top = 7.0
-offset_right = -7.0
-offset_bottom = 30.0
-grow_horizontal = 0
-text = "Arrow:3"
-script = ExtResource("18_knwae")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 
