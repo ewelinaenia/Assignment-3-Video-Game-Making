@@ -1795,7 +1795,7 @@ offset_right = 33.0
 offset_bottom = 59.0
 theme_override_fonts/font = ExtResource("6_mlvvt")
 theme_override_font_sizes/font_size = 8
-text = "I should probably go home..."
+text = "Wait, this is not the exit."
 autowrap_mode = 2
 
 [node name="TextTrigger5" parent="." instance=ExtResource("5_sl187")]
@@ -1812,7 +1812,7 @@ offset_right = 92.0
 offset_bottom = 54.0
 theme_override_fonts/font = ExtResource("6_mlvvt")
 theme_override_font_sizes/font_size = 8
-text = "I should probably go home..."
+text = "Wait, this is not the exit."
 autowrap_mode = 2
 
 [node name="TextTrigger6" parent="." instance=ExtResource("5_sl187")]
@@ -1836,14 +1836,27 @@ shape = SubResource("RectangleShape2D_fcas3")
 position = Vector2(172, 722)
 
 [node name="Label" type="Label" parent="TextTrigger7"]
-offset_left = -62.0
+offset_left = -73.0
 offset_top = -28.0
 offset_right = 80.0
 offset_bottom = 13.0
 theme_override_fonts/font = ExtResource("6_mlvvt")
 theme_override_font_sizes/font_size = 8
 text = "The door is locked. 
-I'll try my LU-card."
+I should try my LU-card."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="TextTrigger7"]
+offset_left = 23.0
+offset_top = -28.0
+offset_right = 80.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_mlvvt")
+theme_override_font_sizes/font_size = 8
+text = "
+LU-card "
 horizontal_alignment = 1
 autowrap_mode = 2
 
