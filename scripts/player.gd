@@ -17,7 +17,7 @@ var knockback_timer = 0.0
 var max_temperature: float = 100.0
 var temperature: float = 100.0
 
-var temp_loss_per_sec: float = 5.0
+var temp_loss_per_sec: float = 3.0
 var temp_gain_per_sec: float = 20.0
 
 var near_fire: bool = false

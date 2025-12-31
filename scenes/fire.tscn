@@ -39,7 +39,7 @@ shader_parameter/Texture_5 = SubResource("GradientTexture1D_4l61p")
 radius = 19.0263
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_txieb"]
-radius = 31.0161
+radius = 42.19
 
 [node name="Fire" type="StaticBody2D"]
 
