@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dm8f06qnmssxt"]
 
-[ext_resource type="Script" uid="uid://cbl56o1ccfpte" path="res://scripts/cutscene_transition.gd" id="1_a73vk"]
+[ext_resource type="Script" path="res://scripts/cutscene_transition.gd" id="1_a73vk"]
 
 [node name="cutscene_transition" type="Area2D"]
 script = ExtResource("1_a73vk")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhseywswd8ite"]
+
+[ext_resource type="Script" uid="uid://cj2lpcg15arbu" path="res://scripts/pickaxe_collectable.gd" id="1_solua"]
+[ext_resource type="Resource" uid="uid://dg3gdwlcrovot" path="res://inventory/items/pickaxe.tres" id="2_mfav7"]
+[ext_resource type="Texture2D" uid="uid://bpiurtlhtrl70" path="res://assets/collectables/pickaxe.png" id="3_rsi83"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s6mvp"]
+radius = 18.0
+
+[node name="pickaxe" type="StaticBody2D"]
+script = ExtResource("1_solua")
+item = ExtResource("2_mfav7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.583)
+texture = ExtResource("3_rsi83")
+
+[node name="interactible_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactible_area"]
+shape = SubResource("CircleShape2D_s6mvp")
+
+[connection signal="body_entered" from="interactible_area" to="." method="_on_interactible_area_body_entered"]

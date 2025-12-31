@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=41 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
@@ -16,7 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://badsv6m40qtbf" path="res://scenes/portal_outside.tscn" id="14_qhfi5"]
 [ext_resource type="PackedScene" uid="uid://c7ucolrp1voqa" path="res://scenes/slime.tscn" id="15_7mgad"]
 [ext_resource type="PackedScene" uid="uid://nk8mh0g1irtf" path="res://inventory/inventory_ui.tscn" id="17_f837i"]
-[ext_resource type="PackedScene" path="res://scenes/arrow_collectible.tscn" id="17_oywlg"]
+[ext_resource type="PackedScene" uid="uid://dwhamxgeysaxi" path="res://scenes/arrow_collectible.tscn" id="17_oywlg"]
+[ext_resource type="PackedScene" uid="uid://c2swsqhoekx1u" path="res://scenes/final_portal.tscn" id="18_bm0ot"]
+[ext_resource type="PackedScene" uid="uid://bhseywswd8ite" path="res://scenes/pickaxe_collectable.tscn" id="18_f837i"]
+[ext_resource type="PackedScene" uid="uid://cp3mxyvn7bnfc" path="res://scenes/text_trigger.tscn" id="19_ggir6"]
+[ext_resource type="FontFile" uid="uid://cp7hr4fr034j7" path="res://assets/fonts/PixelOperator8.ttf" id="20_bm0ot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuak1"]
 texture = ExtResource("1_jga56")
@@ -1819,7 +1823,10 @@ distance = -1591.0
 bg_color = Color(0.812696, 0.525556, 0.254121, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f837i"]
-size = Vector2(126, 96)
+size = Vector2(126, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tqol"]
+size = Vector2(113, 65)
 
 [node name="outdoors2" type="Node2D"]
 
@@ -2021,5 +2028,47 @@ shape = SubResource("RectangleShape2D_f837i")
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
-position = Vector2(1047, 766)
+position = Vector2(1047, 771)
 shape = SubResource("RectangleShape2D_f837i")
+
+[node name="final_portal" parent="StaticBody2D7" instance=ExtResource("18_bm0ot")]
+position = Vector2(1051, 836)
+
+[node name="pickaxe" parent="." instance=ExtResource("18_f837i")]
+position = Vector2(98, 864)
+
+[node name="TextTrigger" parent="." instance=ExtResource("19_ggir6")]
+position = Vector2(152, 872)
+
+[node name="Label" type="Label" parent="TextTrigger"]
+offset_left = -61.0
+offset_top = 7.0
+offset_right = 69.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_bm0ot")
+theme_override_font_sizes/font_size = 8
+text = "I'm so cold, I have to
+warm up at the fire"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger"]
+position = Vector2(3.5, 19.5)
+shape = SubResource("RectangleShape2D_8tqol")
+
+[node name="TextTrigger2" parent="." instance=ExtResource("19_ggir6")]
+position = Vector2(1049, 872)
+
+[node name="Label" type="Label" parent="TextTrigger2"]
+offset_left = -44.0
+offset_top = 37.0
+offset_right = 86.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_bm0ot")
+theme_override_font_sizes/font_size = 8
+text = "I need a pickaxe
+to get out of here"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger2"]
+position = Vector2(3.5, 19.5)
+shape = SubResource("RectangleShape2D_8tqol")

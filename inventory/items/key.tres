@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://ck227er55k01u"]
+
+[ext_resource type="Script" uid="uid://cpidq50a42d5y" path="res://inventory/inventory_item.gd" id="1_qjfcu"]
+[ext_resource type="Texture2D" uid="uid://cxtn5524manen" path="res://assets/collectables/key.png" id="2_y2klj"]
+
+[resource]
+script = ExtResource("1_qjfcu")
+name = "key"
+texture = ExtResource("2_y2klj")
+metadata/_custom_type_script = "uid://cpidq50a42d5y"

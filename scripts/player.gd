@@ -26,6 +26,13 @@ var bow:Node2D
 
 func _ready() -> void:
 	bow = $Bow
+	
+	if GameManager.spawn_target != "":
+		var spawn = get_tree().current_scene.get_node_or_null(GameManager.spawn_target)
+		if spawn:
+			global_position = spawn.global_position
+
+		GameManager.spawn_target = ""  # clear after use
 
 func _physics_process(delta: float) -> void:
 	if player_state != "dead":
