@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cobmwrpnyogm7" path="res://portal_outside.gd" id="1_t70bj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6srt"]
-size = Vector2(13, 18)
+size = Vector2(17, 21)
 
 [node name="Portal_outside" type="Node2D"]
 
@@ -11,7 +11,7 @@ size = Vector2(13, 18)
 script = ExtResource("1_t70bj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 1)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_q6srt")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

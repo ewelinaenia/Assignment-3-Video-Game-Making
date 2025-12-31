@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cc4en3os4n12j"]
+[gd_scene load_steps=35 format=3 uid="uid://cc4en3os4n12j"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_ayhkl"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_ngke6"]
@@ -1080,12 +1080,72 @@ sources/5 = SubResource("TileSetAtlasSource_8tjnr")
 sources/6 = SubResource("TileSetAtlasSource_8w4yx")
 sources/7 = SubResource("TileSetAtlasSource_xntjn")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sdcrn"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pvmqs"]
+normal = Vector2(1, 0)
+distance = -109.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_54o7e"]
+distance = -109.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ko6nx"]
 normal = Vector2(-1, 0)
-distance = -1568.0
+distance = -191.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_31qde"]
+normal = Vector2(-0.00843852, 0.999964)
+distance = 11.7717
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvmqs"]
-size = Vector2(49, 23)
+size = Vector2(89, 76)
+
+[sub_resource type="Animation" id="Animation_pvmqs"]
+resource_name = "intro_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TextTrigger/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4.63333, 5.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_54o7e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ko6nx"]
+_data = {
+&"RESET": SubResource("Animation_54o7e"),
+&"intro_fade": SubResource("Animation_pvmqs")
+}
 
 [node name="outdoors" type="Node2D"]
 y_sort_enabled = true
@@ -1164,28 +1224,31 @@ position = Vector2(1493, 548)
 position = Vector2(1377, 599)
 
 [node name="Portal_outside" parent="." instance=ExtResource("12_sdcrn")]
-position = Vector2(1308, 46)
+position = Vector2(1308, 52)
 scale = Vector2(1.27676, 1.34081)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_sdcrn")
+shape = SubResource("WorldBoundaryShape2D_pvmqs")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(253, 888)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_sdcrn")
+shape = SubResource("WorldBoundaryShape2D_54o7e")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1379, 352)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("WorldBoundaryShape2D_sdcrn")
+shape = SubResource("WorldBoundaryShape2D_ko6nx")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(232, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-shape = SubResource("WorldBoundaryShape2D_sdcrn")
+shape = SubResource("WorldBoundaryShape2D_31qde")
 
 [node name="ArrowPickable" parent="." instance=ExtResource("17_oywlg")]
 position = Vector2(1421, 394)
@@ -1261,6 +1324,7 @@ scale = Vector2(2, 2)
 position = Vector2(-52, 817)
 
 [node name="TextTrigger" parent="." instance=ExtResource("16_ibt4e")]
+visible = false
 position = Vector2(-2, 62)
 
 [node name="Label" type="Label" parent="TextTrigger"]
@@ -1274,7 +1338,7 @@ text = "I need to find
 a way home..."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger"]
-position = Vector2(6.5, 1.5)
+position = Vector2(-13.5, 2)
 shape = SubResource("RectangleShape2D_pvmqs")
 
 [node name="TextTrigger2" parent="." instance=ExtResource("16_ibt4e")]
@@ -1291,5 +1355,25 @@ text = "It's locked,
 I need a key"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger2"]
-position = Vector2(3.5, -22.5)
+position = Vector2(4, -13)
 shape = SubResource("RectangleShape2D_pvmqs")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 100.0
+offset_top = 40.0
+offset_right = 227.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 20
+text = "Find a key
+and a way home"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_ko6nx")
+}
+autoplay = "intro_fade"

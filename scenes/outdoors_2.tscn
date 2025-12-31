@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dpmnyd2m4po3y"]
+[gd_scene load_steps=44 format=3 uid="uid://dpmnyd2m4po3y"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_jga56"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_3jtve"]
@@ -1828,6 +1828,55 @@ size = Vector2(126, 106)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tqol"]
 size = Vector2(113, 65)
 
+[sub_resource type="Animation" id="Animation_pvmqs"]
+resource_name = "intro_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../TextTrigger/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4.63333, 5.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_54o7e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ko6nx"]
+_data = {
+&"RESET": SubResource("Animation_54o7e"),
+&"intro_fade": SubResource("Animation_pvmqs")
+}
+
 [node name="outdoors2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2048,8 +2097,9 @@ offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_bm0ot")
 theme_override_font_sizes/font_size = 8
-text = "I'm so cold, I have to
-warm up at the fire"
+text = "I'm getting cold, 
+I have to warm 
+up at the fire"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger"]
 position = Vector2(3.5, 19.5)
@@ -2075,3 +2125,26 @@ shape = SubResource("RectangleShape2D_8tqol")
 
 [node name="Fire5" parent="." instance=ExtResource("12_8a845")]
 position = Vector2(-196, 762)
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer4"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 350.0
+offset_top = 100.0
+offset_right = 509.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Find a pickaxe 
+and a way out,
+don't forget to 
+stay warm!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer4/Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_ko6nx")
+}
+autoplay = "intro_fade"

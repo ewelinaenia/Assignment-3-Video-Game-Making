@@ -8,4 +8,5 @@ func _on_body_entered(body):
 			return
 
 		# Player has the pickaxe → go to ending scene
-		get_tree().change_scene_to_file("res://scenes/ending_scene.tscn")
+		#get_tree().change_scene_to_file("res://scenes/ending_scene.tscn")
+		SceneTransition.change_scene("res://scenes/ending_scene.tscn")

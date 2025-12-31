@@ -22,8 +22,9 @@ func _on_body_entered(body):
 			GameManager.spawn_target = "SpawnPoint"
 			
 		#print(next_scene_file)
-		get_tree().change_scene_to_file(next_scene_file)
-		
+		#get_tree().change_scene_to_file(next_scene_file)
+		SceneTransition.change_scene(next_scene_file)
+
 		#var new_scene = load(target_scene).instantiate()
 		#get_tree().change_scene_to_packed(load(target_scene))
 #

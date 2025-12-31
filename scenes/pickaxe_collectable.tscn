@@ -12,7 +12,7 @@ script = ExtResource("1_solua")
 item = ExtResource("2_mfav7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.7, 0.583)
+scale = Vector2(0.9, 0.75)
 texture = ExtResource("3_rsi83")
 
 [node name="interactible_area" type="Area2D" parent="."]
