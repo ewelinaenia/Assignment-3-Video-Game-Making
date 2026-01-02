@@ -24,6 +24,16 @@ var near_fire: bool = false
 @onready var temperature_bar: ProgressBar = $"../CanvasLayer2/TemperatureBar"
 var bow:Node2D
 
+#hunger
+var max_hunger: float = 100.0
+var hunger: float = 100.0
+
+var hunger_loss_per_sec: float = 1.5
+var apple_hunger_gain: float = 25.0
+
+@onready var hunger_bar: ProgressBar = $"../CanvasLayer3/HungerBar"
+##
+
 func _ready() -> void:
 	bow = $Bow
 	
@@ -60,12 +70,15 @@ func _physics_process(delta: float) -> void:
 #temp
 func _process(delta: float) -> void:
 	_update_temperature(delta)
+	_update_hunger(delta)
 	_update_ui()
 	bow.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("use_item"):
 		bow.charging()
 	if Input.is_action_just_released("use_item"):
 		bow.shoot()
+	if Input.is_action_just_pressed("eat_apple"):
+		_try_eat_apple()
 	
 func play_animation(direction):
 	if player_state == "idle":
@@ -115,10 +128,26 @@ func _update_temperature(delta: float) -> void:
 	if current_scene_file == "res://scenes/outdoors_2.tscn":
 		if temperature <= 0.0:
 			player_state = "dead"
-	
+#for hunger
+func _update_hunger(delta: float) -> void:
+	hunger -= hunger_loss_per_sec * delta
+	hunger = clamp(hunger, 0.0, max_hunger)
+	if hunger <= 0.0:
+		player_state = "dead"
+		
+func _try_eat_apple() -> void:
+	if hunger >= max_hunger:
+		return
+	var ate:= bag.remove_one_by_name("apple")
+	if ate:
+		hunger += apple_hunger_gain
+		hunger = clamp(hunger, 0.0, max_hunger)
+			
 func _update_ui() -> void:
 	if temperature_bar:
-		temperature_bar.value = temperature			
+		temperature_bar.value = temperature	
+	if hunger_bar:
+		hunger_bar.value = hunger		
 		
 func apply_knockback(direction, force, knockback_duration)->void:
 	knockback = direction * force

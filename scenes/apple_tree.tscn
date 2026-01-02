@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2sm01mx048bo"]
+[gd_scene load_steps=11 format=3 uid="uid://d2sm01mx048bo"]
 
 [ext_resource type="Script" uid="uid://briwvma5has2c" path="res://scripts/apple_tree.gd" id="1_66v30"]
 [ext_resource type="Texture2D" uid="uid://brx4ks1v87j53" path="res://assets/collectables/survivalgame-appletree.png" id="2_veaef"]
 [ext_resource type="Resource" uid="uid://baur7k8lkchl6" path="res://inventory/items/apple.tres" id="2_y0035"]
+[ext_resource type="PackedScene" uid="uid://cp3mxyvn7bnfc" path="res://scenes/text_trigger.tscn" id="4_y0035"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0035"]
 atlas = ExtResource("2_veaef")
@@ -37,6 +38,9 @@ radius = 26.6488
 [sub_resource type="CircleShape2D" id="CircleShape2D_veaef"]
 radius = 18.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0035"]
+radius = 65.4905
+
 [node name="apple_tree" type="Node2D"]
 script = ExtResource("1_66v30")
 item = ExtResource("2_y0035")
@@ -67,6 +71,18 @@ position = Vector2(0, -1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(3, 0)
 shape = SubResource("CircleShape2D_veaef")
+
+[node name="TextTrigger" parent="." instance=ExtResource("4_y0035")]
+
+[node name="Label" type="Label" parent="TextTrigger"]
+offset_right = 204.0
+offset_bottom = 75.0
+text = "Press \"C\" to collect apples,
+ and \"E\" to eat
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger"]
+shape = SubResource("CircleShape2D_y0035")
 
 [connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
 [connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
