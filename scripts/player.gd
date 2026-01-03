@@ -29,9 +29,9 @@ var max_hunger: float = 100.0
 var hunger: float = 100.0
 
 var hunger_loss_per_sec: float = 1.5
-var apple_hunger_gain: float = 25.0
+var apple_hunger_gain: float = 50.0
 
-@onready var hunger_bar: ProgressBar = $"../CanvasLayer3/HungerBar"
+@onready var hunger_bar: ProgressBar = $"../HungerCanvasLayer/HungerBar"
 ##
 
 func _ready() -> void:

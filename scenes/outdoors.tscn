@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cc4en3os4n12j"]
+[gd_scene load_steps=40 format=3 uid="uid://cc4en3os4n12j"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_ayhkl"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_ngke6"]
@@ -1139,6 +1139,9 @@ _data = {
 &"intro_fade": SubResource("Animation_pvmqs")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54o7e"]
+bg_color = Color(0.204212, 0.629119, 0.936706, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko6nx"]
 size = Vector2(194, 99)
 
@@ -1394,15 +1397,16 @@ libraries = {
 }
 autoplay = "intro_fade"
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+[node name="HungerCanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HungerBar" type="ProgressBar" parent="CanvasLayer3"]
+[node name="HungerBar" type="ProgressBar" parent="HungerCanvasLayer"]
 offset_right = 102.0
 offset_bottom = 27.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_54o7e")
 value = 100.0
 show_percentage = false
 
-[node name="HungerLabel" type="Label" parent="CanvasLayer3"]
+[node name="HungerLabel" type="Label" parent="HungerCanvasLayer"]
 offset_left = 106.0
 offset_top = -3.0
 offset_right = 164.0
