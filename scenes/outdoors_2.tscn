@@ -2043,10 +2043,12 @@ value = 100.0
 show_percentage = false
 
 [node name="TemperatureLabel" type="Label" parent="CanvasLayer2"]
-offset_left = 118.0
-offset_top = -1.0
-offset_right = 220.0
-offset_bottom = 22.0
+offset_left = 117.0
+offset_top = 10.0
+offset_right = 273.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("20_bm0ot")
+theme_override_font_sizes/font_size = 16
 text = "Temperature"
 
 [node name="HungerCanvasLayer" type="CanvasLayer" parent="."]
@@ -2060,10 +2062,12 @@ value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="HungerCanvasLayer"]
-offset_left = 131.0
-offset_top = 41.0
-offset_right = 189.0
-offset_bottom = 64.0
+offset_left = 118.0
+offset_top = 46.0
+offset_right = 202.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("20_bm0ot")
+theme_override_font_sizes/font_size = 0
 text = "Hunger"
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
@@ -2155,7 +2159,8 @@ offset_top = 100.0
 offset_right = 509.0
 offset_bottom = 221.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("20_bm0ot")
+theme_override_font_sizes/font_size = 16
 text = "Find a pickaxe 
 and a way out,
 don't forget to 
