@@ -38,6 +38,7 @@ func charging():
 	if bag.get_item_count("arrow")<=0:
 		playStream(errorStream1)
 		return
+	z_index = 1
 	charge_start_time = Time.get_ticks_msec() / 1000.0
 	animatedSprite.play("default")
 	playStream(chargingStream)
@@ -49,6 +50,7 @@ func playStream(stream:AudioStream):
 
 
 func shoot():
+	z_index = 1
 	animatedSprite.pause()
 	animatedSprite.frame = 0
 	if arrowScene == null:
@@ -73,3 +75,4 @@ func shoot():
 	arrow.set_velocity(velocity)
 	arrow.global_position = global_position
 	get_node("/root").add_child(arrow)
+	z_index = -1
