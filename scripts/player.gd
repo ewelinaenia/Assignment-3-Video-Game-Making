@@ -132,8 +132,10 @@ func _update_temperature(delta: float) -> void:
 func _update_hunger(delta: float) -> void:
 	hunger -= hunger_loss_per_sec * delta
 	hunger = clamp(hunger, 0.0, max_hunger)
-	if hunger <= 0.0:
-		player_state = "dead"
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	if current_scene_file != "res://scenes/uni.tscn":
+		if hunger <= 0.0:
+			player_state = "dead"
 		
 func _try_eat_apple() -> void:
 	if hunger >= max_hunger:
@@ -155,4 +157,12 @@ func apply_knockback(direction, force, knockback_duration)->void:
 
 
 func _on_cutscene_transition_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.

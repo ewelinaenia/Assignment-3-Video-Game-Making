@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://dwo48gm0bavpq"]
 
-[ext_resource type="Script" uid="uid://bpllt7i7xpn88" path="res://scenes/cutscene.gd" id="1_3ptll"]
+[ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_3ptll"]
 [ext_resource type="Texture2D" uid="uid://dgb6huj0cc3pm" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Floors_Tiles.png" id="1_bb0yx"]
 [ext_resource type="Texture2D" uid="uid://tcoekft6ddni" path="res://assets/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="2_3ptll"]
 [ext_resource type="Texture2D" uid="uid://4kw6j4yv4bh2" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="3_d18fx"]
