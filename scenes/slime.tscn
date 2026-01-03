@@ -154,7 +154,7 @@ radius = 5.0
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2fkb"]
-radius = 57.0
+radius = 120.0
 
 [node name="slime" type="CharacterBody2D"]
 position = Vector2(2, -1)

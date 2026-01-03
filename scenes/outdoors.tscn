@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cc4en3os4n12j"]
+[gd_scene load_steps=36 format=3 uid="uid://cc4en3os4n12j"]
 
 [ext_resource type="Texture2D" uid="uid://dkd16sboqfupn" path="res://assets/Modern tiles_Free/Outdoors_free/Trees/Model_03/Size_02.png" id="1_ayhkl"]
 [ext_resource type="Texture2D" uid="uid://cyk608edwthla" path="res://assets/Modern tiles_Free/Outdoors_free/Tilesets/Rocks.png" id="2_ngke6"]
@@ -1098,6 +1098,9 @@ distance = 11.7717
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvmqs"]
 size = Vector2(89, 76)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54o7e"]
+size = Vector2(135.5, 114)
+
 [sub_resource type="Animation" id="Animation_54o7e"]
 length = 0.001
 tracks/0/type = "value"
@@ -1324,7 +1327,6 @@ scale = Vector2(2, 2)
 position = Vector2(-52, 817)
 
 [node name="TextTrigger" parent="." instance=ExtResource("16_ibt4e")]
-visible = false
 position = Vector2(-2, 62)
 
 [node name="Label" type="Label" parent="TextTrigger"]
@@ -1357,6 +1359,42 @@ I need a key"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger2"]
 position = Vector2(4, -13)
 shape = SubResource("RectangleShape2D_pvmqs")
+
+[node name="TextTrigger3" parent="." instance=ExtResource("16_ibt4e")]
+position = Vector2(1304, 93)
+
+[node name="Label" type="Label" parent="TextTrigger3"]
+offset_left = -372.0
+offset_top = 501.0
+offset_right = -248.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("17_pvmqs")
+theme_override_font_sizes/font_size = 8
+text = "Press \"C\" to collect apples,
+ and \"E\" to eat"
+autowrap_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger3"]
+position = Vector2(-320.75, 472)
+shape = SubResource("RectangleShape2D_54o7e")
+
+[node name="TextTrigger4" parent="." instance=ExtResource("16_ibt4e")]
+position = Vector2(1304, 93)
+
+[node name="Label" type="Label" parent="TextTrigger4"]
+offset_left = 69.0
+offset_top = 130.0
+offset_right = 193.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("17_pvmqs")
+theme_override_font_sizes/font_size = 8
+text = "Press \"C\" to collect apples,
+ and \"E\" to eat"
+autowrap_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextTrigger4"]
+position = Vector2(47, 159)
+shape = SubResource("RectangleShape2D_54o7e")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
