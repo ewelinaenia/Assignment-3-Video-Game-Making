@@ -253,6 +253,7 @@ position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="Bow" parent="." instance=ExtResource("3_qhqgy")]
+z_index = -1
 bag = ExtResource("2_dqkch")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
