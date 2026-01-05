@@ -102,8 +102,10 @@ func play_animation(direction):
 		elif direction.x < -0.5 and direction.y > 0.5:
 			$AnimatedSprite2D.play("sw-walk")
 	elif player_state == "dead":
-		$AnimatedSprite2D.play("death")
-			
+		bag.clear()
+		get_tree().reload_current_scene()
+		#$AnimatedSprite2D.play("death")
+		
 func collect(item):
 	bag.insert(item)
 
@@ -113,7 +115,7 @@ func _on_hurt_box_body_entered(body: Node2D) -> void:
 		print(health)
 		var knockback_direction = (position - body.position).normalized()
 		apply_knockback(knockback_direction, 200, 0.15)
-	if health <= 0:
+	if health <= 0:		
 		player_state = "dead"
 
 #for temp

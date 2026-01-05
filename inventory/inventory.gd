@@ -17,6 +17,13 @@ func insert(item:InventoryItem):
 			emptyslots[0].amount = 1
 	update.emit()
 
+func clear():
+	for slot in slots:
+		slot.item = null
+		slot.amount = 0
+	update.emit()
+
+
 func get_item_count(item_name: String) -> int:
 	var total := 0
 	for slot in slots:
